@@ -1,0 +1,176 @@
+Number of Intel(R) Xeon Phi(TM) coprocessors : 0
+================================================================================
+HPLinpack 2.1  --  High-Performance Linpack benchmark  --   October 26, 2012
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N        :  141312 
+NB       :     384 
+PMAP     : Column-major process mapping
+P        :       1 
+Q        :       1 
+PFACT    :   Right 
+NBMIN    :       2 
+NDIV     :       2 
+RFACT    :   Crout 
+BCAST    :   1ring 
+DEPTH    :       0 
+SWAP     : Binary-exchange
+L1       : no-transposed form
+U        : no-transposed form
+EQUIL    : no
+ALIGN    :    8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+gpuv100001      : Column=000768 Fraction=0.005 Kernel=    1.19 Mflops=2955077.44
+gpuv100001      : Column=001536 Fraction=0.010 Kernel=1596880.41 Mflops=2076737.95
+gpuv100001      : Column=002304 Fraction=0.015 Kernel=1609573.98 Mflops=1895374.03
+gpuv100001      : Column=003072 Fraction=0.020 Kernel=1592667.24 Mflops=1810750.52
+gpuv100001      : Column=003840 Fraction=0.025 Kernel=1587605.13 Mflops=1762299.33
+gpuv100001      : Column=004608 Fraction=0.030 Kernel=1611970.36 Mflops=1736058.40
+gpuv100001      : Column=004992 Fraction=0.035 Kernel=1554975.10 Mflops=1721149.47
+gpuv100001      : Column=005760 Fraction=0.040 Kernel=1591791.31 Mflops=1703354.96
+gpuv100001      : Column=006528 Fraction=0.045 Kernel=1616362.75 Mflops=1693079.35
+gpuv100001      : Column=007296 Fraction=0.050 Kernel=1582604.34 Mflops=1681306.75
+gpuv100001      : Column=008064 Fraction=0.055 Kernel=1598306.54 Mflops=1673466.51
+gpuv100001      : Column=008832 Fraction=0.060 Kernel=1594321.72 Mflops=1666691.85
+gpuv100001      : Column=009216 Fraction=0.065 Kernel=1596337.05 Mflops=1663831.74
+gpuv100001      : Column=009984 Fraction=0.070 Kernel=1590395.28 Mflops=1658335.39
+gpuv100001      : Column=010752 Fraction=0.075 Kernel=1587909.23 Mflops=1653477.41
+gpuv100001      : Column=011520 Fraction=0.080 Kernel=1578403.16 Mflops=1648659.02
+gpuv100001      : Column=012288 Fraction=0.085 Kernel=1592388.85 Mflops=1645330.59
+gpuv100001      : Column=013056 Fraction=0.090 Kernel=1597102.42 Mflops=1642674.71
+gpuv100001      : Column=013440 Fraction=0.095 Kernel=1562132.14 Mflops=1640488.62
+gpuv100001      : Column=014208 Fraction=0.100 Kernel=1593585.44 Mflops=1638139.08
+gpuv100001      : Column=014976 Fraction=0.105 Kernel=1601539.16 Mflops=1636421.27
+gpuv100001      : Column=015744 Fraction=0.110 Kernel=1562534.35 Mflops=1633069.11
+gpuv100001      : Column=016512 Fraction=0.115 Kernel=1581384.72 Mflops=1630877.43
+gpuv100001      : Column=017280 Fraction=0.120 Kernel=1599978.32 Mflops=1629649.07
+gpuv100001      : Column=018048 Fraction=0.125 Kernel=1589156.57 Mflops=1628109.20
+gpuv100001      : Column=018432 Fraction=0.130 Kernel=1616372.21 Mflops=1627895.78
+gpuv100001      : Column=019200 Fraction=0.135 Kernel=1565311.13 Mflops=1625650.96
+gpuv100001      : Column=019968 Fraction=0.140 Kernel=1595224.10 Mflops=1624628.97
+gpuv100001      : Column=020736 Fraction=0.145 Kernel=1571250.35 Mflops=1622890.15
+gpuv100001      : Column=021504 Fraction=0.150 Kernel=1607315.45 Mflops=1622415.39
+gpuv100001      : Column=022272 Fraction=0.155 Kernel=1576372.15 Mflops=1621044.60
+gpuv100001      : Column=022656 Fraction=0.160 Kernel=1604845.00 Mflops=1620813.37
+gpuv100001      : Column=023424 Fraction=0.165 Kernel=1576328.35 Mflops=1619568.73
+gpuv100001      : Column=024192 Fraction=0.170 Kernel=1582267.04 Mflops=1618569.94
+gpuv100001      : Column=024960 Fraction=0.175 Kernel=1592009.94 Mflops=1617890.18
+gpuv100001      : Column=025728 Fraction=0.180 Kernel=1581354.85 Mflops=1616984.20
+gpuv100001      : Column=026496 Fraction=0.185 Kernel=1587308.71 Mflops=1616277.98
+gpuv100001      : Column=026880 Fraction=0.190 Kernel=1583853.30 Mflops=1615899.64
+gpuv100001      : Column=027648 Fraction=0.195 Kernel=1587951.75 Mflops=1615270.14
+gpuv100001      : Column=028416 Fraction=0.200 Kernel=1578952.44 Mflops=1614476.25
+gpuv100001      : Column=029184 Fraction=0.205 Kernel=1578751.16 Mflops=1613722.03
+gpuv100001      : Column=029952 Fraction=0.210 Kernel=1576862.24 Mflops=1612969.21
+gpuv100001      : Column=030720 Fraction=0.215 Kernel=1594123.20 Mflops=1612601.03
+gpuv100001      : Column=031104 Fraction=0.220 Kernel=1577787.29 Mflops=1612264.28
+gpuv100001      : Column=031872 Fraction=0.225 Kernel=1596342.78 Mflops=1611968.62
+gpuv100001      : Column=032640 Fraction=0.230 Kernel=1572372.68 Mflops=1611245.94
+gpuv100001      : Column=033408 Fraction=0.235 Kernel=1588143.13 Mflops=1610841.54
+gpuv100001      : Column=034176 Fraction=0.240 Kernel=1581984.75 Mflops=1610350.13
+gpuv100001      : Column=034944 Fraction=0.245 Kernel=1578615.63 Mflops=1609825.10
+gpuv100001      : Column=035712 Fraction=0.250 Kernel=1564392.55 Mflops=1609089.59
+gpuv100001      : Column=036096 Fraction=0.255 Kernel=1619525.96 Mflops=1609169.69
+gpuv100001      : Column=036864 Fraction=0.260 Kernel=1583921.10 Mflops=1608783.73
+gpuv100001      : Column=037632 Fraction=0.265 Kernel=1584987.67 Mflops=1608430.83
+gpuv100001      : Column=038400 Fraction=0.270 Kernel=1586368.80 Mflops=1608113.38
+gpuv100001      : Column=039168 Fraction=0.275 Kernel=1576207.21 Mflops=1607664.57
+gpuv100001      : Column=039936 Fraction=0.280 Kernel=1582602.71 Mflops=1607323.41
+gpuv100001      : Column=040320 Fraction=0.285 Kernel=1542629.04 Mflops=1606879.83
+gpuv100001      : Column=041088 Fraction=0.290 Kernel=1600473.86 Mflops=1606797.20
+gpuv100001      : Column=041856 Fraction=0.295 Kernel=1579402.46 Mflops=1606449.05
+gpuv100001      : Column=042624 Fraction=0.300 Kernel=1586416.46 Mflops=1606202.55
+gpuv100001      : Column=043392 Fraction=0.305 Kernel=1582532.84 Mflops=1605918.53
+gpuv100001      : Column=044160 Fraction=0.310 Kernel=1597090.92 Mflops=1605816.40
+gpuv100001      : Column=044544 Fraction=0.315 Kernel=1549337.03 Mflops=1605485.53
+gpuv100001      : Column=045312 Fraction=0.320 Kernel=1585224.01 Mflops=1605258.83
+gpuv100001      : Column=046080 Fraction=0.325 Kernel=1578275.39 Mflops=1604963.66
+gpuv100001      : Column=046848 Fraction=0.330 Kernel=1582533.92 Mflops=1604725.44
+gpuv100001      : Column=047616 Fraction=0.335 Kernel=1589867.14 Mflops=1604572.48
+gpuv100001      : Column=048384 Fraction=0.340 Kernel=1569202.64 Mflops=1604213.27
+gpuv100001      : Column=048768 Fraction=0.345 Kernel=1577924.03 Mflops=1604082.79
+gpuv100001      : Column=049536 Fraction=0.350 Kernel=1595150.08 Mflops=1603997.00
+gpuv100001      : Column=050304 Fraction=0.355 Kernel=1583437.21 Mflops=1603803.22
+gpuv100001      : Column=051072 Fraction=0.360 Kernel=1578706.43 Mflops=1603572.10
+gpuv100001      : Column=051840 Fraction=0.365 Kernel=1553320.88 Mflops=1603113.91
+gpuv100001      : Column=052608 Fraction=0.370 Kernel=1593876.37 Mflops=1603033.92
+gpuv100001      : Column=053376 Fraction=0.375 Kernel=1584129.78 Mflops=1602873.42
+gpuv100001      : Column=053760 Fraction=0.380 Kernel=1562925.05 Mflops=1602704.49
+gpuv100001      : Column=054528 Fraction=0.385 Kernel=1593249.24 Mflops=1602627.69
+gpuv100001      : Column=055296 Fraction=0.390 Kernel=1569350.31 Mflops=1602360.30
+gpuv100001      : Column=056064 Fraction=0.395 Kernel=1565571.15 Mflops=1602071.49
+gpuv100001      : Column=056832 Fraction=0.400 Kernel=1575651.41 Mflops=1601870.64
+gpuv100001      : Column=057600 Fraction=0.405 Kernel=1600502.11 Mflops=1601860.65
+gpuv100001      : Column=057984 Fraction=0.410 Kernel=1559406.41 Mflops=1601704.45
+gpuv100001      : Column=058752 Fraction=0.415 Kernel=1555890.83 Mflops=1601373.60
+gpuv100001      : Column=059520 Fraction=0.420 Kernel=1592785.12 Mflops=1601314.54
+gpuv100001      : Column=060288 Fraction=0.425 Kernel=1560356.04 Mflops=1601034.32
+gpuv100001      : Column=061056 Fraction=0.430 Kernel=1570792.65 Mflops=1600833.98
+gpuv100001      : Column=061824 Fraction=0.435 Kernel=1585073.27 Mflops=1600733.12
+gpuv100001      : Column=062208 Fraction=0.440 Kernel=1543456.70 Mflops=1600548.23
+gpuv100001      : Column=062976 Fraction=0.445 Kernel=1574277.39 Mflops=1600385.36
+gpuv100001      : Column=063744 Fraction=0.450 Kernel=1580026.09 Mflops=1600262.78
+gpuv100001      : Column=064512 Fraction=0.455 Kernel=1574830.88 Mflops=1600113.05
+gpuv100001      : Column=065280 Fraction=0.460 Kernel=1548805.43 Mflops=1599813.75
+gpuv100001      : Column=066048 Fraction=0.465 Kernel=1576747.64 Mflops=1599684.95
+gpuv100001      : Column=066432 Fraction=0.470 Kernel=1607658.74 Mflops=1599706.40
+gpuv100001      : Column=067200 Fraction=0.475 Kernel=1557891.41 Mflops=1599479.07
+gpuv100001      : Column=067968 Fraction=0.480 Kernel=1569112.12 Mflops=1599319.37
+gpuv100001      : Column=068736 Fraction=0.485 Kernel=1581340.67 Mflops=1599227.97
+gpuv100001      : Column=069504 Fraction=0.490 Kernel=1566732.01 Mflops=1599065.52
+gpuv100001      : Column=070272 Fraction=0.495 Kernel=1570522.04 Mflops=1598926.86
+gpuv100001      : Column=072960 Fraction=0.515 Kernel=1562301.76 Mflops=1598340.29
+gpuv100001      : Column=075648 Fraction=0.535 Kernel=1575776.35 Mflops=1598013.89
+gpuv100001      : Column=078720 Fraction=0.555 Kernel=1568003.50 Mflops=1597564.06
+gpuv100001      : Column=081408 Fraction=0.575 Kernel=1561644.08 Mflops=1597137.70
+gpuv100001      : Column=084096 Fraction=0.595 Kernel=1560142.19 Mflops=1596740.20
+gpuv100001      : Column=087168 Fraction=0.615 Kernel=1564610.25 Mflops=1596388.40
+gpuv100001      : Column=089856 Fraction=0.635 Kernel=1558414.01 Mflops=1596062.77
+gpuv100001      : Column=092928 Fraction=0.655 Kernel=1549244.43 Mflops=1595653.77
+gpuv100001      : Column=095616 Fraction=0.675 Kernel=1548122.95 Mflops=1595333.13
+gpuv100001      : Column=098304 Fraction=0.695 Kernel=1557606.75 Mflops=1595109.58
+gpuv100001      : Column=112512 Fraction=0.795 Kernel=1531776.39 Mflops=1593798.60
+gpuv100001      : Column=126720 Fraction=0.895 Kernel=1498100.78 Mflops=1593048.37
+gpuv100001      : Column=140928 Fraction=0.995 Kernel=1034295.84 Mflops=1592101.38
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WC00C2R2      141312   384     1     1            1182.47            1.59097e+03
+HPL_pdgesv() start time Tue Mar 26 14:00:32 2019
+
+HPL_pdgesv() end time   Tue Mar 26 14:20:14 2019
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0034619 ...... PASSED
+================================================================================
+
+Finished      1 tests with the following results:
+              1 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
