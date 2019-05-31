@@ -37,21 +37,21 @@ The benchmarks will yield the per-client/process and overall throughput for
 #### Average throughput per process
 | # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | 
 |:------------------------|:----------------|:-----------|
-| 1       |    1660549 |    1937220 |
-| 2       |    1488801 |    1340079 |
-| 4       |    1029498 |     927702 |
-| 8       |     617517 |     590076 |
-| 13      |     408883 |     411839 |
+| 1       |    1660 |    1937 |
+| 2       |    1488 |    1340 |
+| 4       |    1029 |     927 |
+| 8       |     617 |     590 |
+| 13      |     408 |     411 |
 
 
 #### Total throughput
 | # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | 
 |:------------------------|:----------------|:-----------|
-| 1    |       1660549 |    1937220 |
-| 2    |       2977603 |    2680159 |
-| 4    |       4117994 |    3710810 |
-| 8    |       4940140 |    4720610 |
-| 13   |       5315481 |    5353919 |
+| 1    |       1660 |    1937 |
+| 2    |       2977 |    2680 |
+| 4    |       4117 |    3710 |
+| 8    |       4940 |    4720 |
+| 13   |       5315 |    5353 |
 
 #### NVME-SSD Scratch Server
 
