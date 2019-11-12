@@ -1,11 +1,8 @@
-# Description of MPI benchmarks at 
+# Infiniband
 
 Basic MPI benchmarks using OSU tools described here:
 
 http://mvapich.cse.ohio-state.edu/benchmarks/
-
-
-# Infiniband
 
 See script at `./infiniband/osu-mpi-benchmarks/initial/ib-pt2pt.sh`
 
