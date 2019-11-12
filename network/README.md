@@ -10,6 +10,7 @@ http://mvapich.cse.ohio-state.edu/benchmarks/
 See script at `./infiniband/osu-mpi-benchmarks/initial/ib-pt2pt.sh`
 
 ***OSU MPI Bi-Directional Bandwidth (MB/s) Test v5.3.2***
+
 Source |  Destination |  Bandwidth (MB/s) |  Latency (us)
 -------|--------------|-------------------|--------------
 openhpc |  compute001  |     		20136   |    		103       	 
