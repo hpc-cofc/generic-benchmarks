@@ -67,7 +67,7 @@ The benchmarks will yield the per-client/process and overall throughput for
 
 #### NSS-HA 7.3 
 
-#### Average throughput per process
+##### Average throughput per process
 | # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | 
 |:------------------------|:----------------|:-----------|
 | 1       |    1660 |    1937 |
@@ -77,7 +77,7 @@ The benchmarks will yield the per-client/process and overall throughput for
 | 13      |     408 |     411 |
 
 
-#### Total throughput
+##### Total throughput
 | # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | 
 |:------------------------|:----------------|:-----------|
 | 1    |       1660 |    1937 |
@@ -87,6 +87,24 @@ The benchmarks will yield the per-client/process and overall throughput for
 | 13   |       5315 |    5353 |
 
 #### NVME-SSD Scratch Server
+
+##### Average throughput per process
+| # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | Random Write (IOPS) | Random Read (IOPS)  
+|:------------------------|:----------------|:-----------|:----------------|:-----------|
+| 1     |      1168474  |   1145639  |      7755   |    13822 |
+| 2     |      1043387  |   1071096  |      7305   |    13724 |
+| 4     |       929801  |    995405  |      7146   |    12651 |
+| 8     |       516795  |    739848  |      6762   |    11619 |
+| 13    |       318603  |    527772  |      6073   |    11332 |
+
+<pre>
+Total throughput
+1           1168474     1145639        7755       13822
+2           2086774     2142193       14611       27448
+4           3719207     3981622       28585       50607
+8           4134362     5918791       54097       92955
+13          4141840     6861047       78951      147316
+</pre>
 
 #### Average throughput per process
 | # clients or processes  | Sequential write rate (MB/s)  | Sequential read rate (MB/s)?  | 
