@@ -1,8 +1,41 @@
-# generic-benchmarks
-Generic compute, storage and communication benchmarks
+# Standard Benchmarks
+The three main components of an HPC cluster are the compute engine, the storage and network. The standard benchmarks below explore performance of each. For more specific application bencharks, please see the `example runs` repository.
 
 # Compute
 ## Intel HPL benchmarks
+
+Here we benchmark the performance of different nodes individually as well as as a larger cluster unit.
+These include
+
+- 10 40-core stdmem nodes
+- 1 80-core bigimem node
+- 2 24-core gpu-containing nodes
+
+
+
+<pre>
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+</pre>
+
+
+ T/V                                                |  N  |  NB | P | Q | Time(secs)  |  Gflops |
+----------------------------------------------------|-----|-----|---|---|---------|-------------
+| logs/gpuv100.log:WC00C2R2                        | 141312 | 384 | 1 | 1 | 1182 |  1,591 |
+| logs/1-nodes.log:WC00C2R2                        | 141312 | 384 | 1 | 1 | 823  |  2,285 |
+| logs/2-nodes.log:WC00C2R2                        | 200448 | 384 | 1 | 2 | 1200 |  4,474 |
+| logs/bigmem.log:WC00C2R2                         | 400896 | 384 | 1 | 1 | 10607 |  4,050 |
+| logs/4-nodes.log:WC00C2R2                        | 283392 | 384 | 2 | 2 | 1699 |  8,931 |
+| logs/8-nodes.log:WC00C2R2                        | 400896 | 384 | 2 | 4 | 2415 |  17,785|
+| logs/10-nodes.log:WC00C2R2                       | 448512 | 384 | 2 | 5 | 2707 |  22,219 |
+
+Please see the `compute-HPL` directory for details.
 
 # Storage
 ## Devices
@@ -65,3 +98,70 @@ The benchmarks will yield the per-client/process and overall throughput for
 |:------------------------|:----------------|:-----------|
 | | |
 
+
+# Network
+## EDR Infiniband (100 Gbps)
+
+
+Basic MPI benchmarks using OSU tools described here:
+
+http://mvapich.cse.ohio-state.edu/benchmarks/
+
+See script at `./infiniband/osu-mpi-benchmarks/initial/ib-pt2pt.sh`
+
+### Bi-Directional Bandwidth (BiBW)
+
+`[HPL@openhpc ~]$ mpirun -np 2 -ppn 1 -hosts compute001,compute003 /opt/ohpc/pub/mpi/mvapich2-gnu7/2.2/libexec/osu-micro-benchmarks/mpi/pt2pt/osu_bibw`
+
+***OSU MPI Bi-Directional Bandwidth (MB/s) Test v5.3.2***
+
+Source |  Destination |  Bandwidth (MB/s) |  Latency (us)
+-------|--------------|-------------------|--------------
+openhpc |  compute001  |     		20136   |    		103       	 
+openhpc |  compute002  |     		20939   |   		104       	 
+openhpc |  compute003  |     		24187   |   		96        	 
+openhpc |  compute004  |     		23974   | 		100       	 
+openhpc |  compute005  |     		24208   | 		97        	 
+openhpc |  compute006  |     		20749   | 		97        	 
+openhpc |  compute007  |     		24120   | 		96        	 
+openhpc |  compute008  |     		24312   | 		95        	 
+openhpc |  bigmem001   |     		23688   | 		98        	 
+openhpc |  gpu001      |     		24317   | 		95        	 
+openhpc |  gpu002      |     		24323   | 		95        	 
+openhpc |  gpuv100001  |     		24331   | 		96        	 
+openhpc |  gpuv100002  |     		24303   | 		96        	 
+openhpc |  stor3       |     		24358   | 		95        	 
+
+
+### Latency 
+
+`[HPL@openhpc ~]$ mpirun -np 2 -ppn 1 -hosts compute001,compute002 /opt/ohpc/pub/mpi/mvapich2-gnu7/2.2/libexec/osu-micro-benchmarks/mpi/pt2pt/osu_multi_lat `
+
+<pre>
+# OSU MPI Multi Latency Test v5.3.2
+# Size          Latency (us)
+0                       0.98
+1                       1.03
+2                       1.03
+4                       1.04
+8                       1.03
+16                      1.06
+32                      1.06
+64                      1.07
+128                     1.12
+256                     1.56
+512                     1.63
+1024                    1.79
+2048                    2.18
+4096                    2.88
+8192                    4.02
+16384                   6.60
+32768                   8.13
+65536                  12.27
+131072                 18.95
+262144                 29.98
+524288                 52.71
+1048576                95.41
+2097152               180.75
+4194304               351.53
+</pre> 
