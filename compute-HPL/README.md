@@ -1,8 +1,15 @@
-# HPC benchmarks for
+# HPL benchmarks
+
+High-performance LINPACK (HPL) is a standard benchmark of the compute capacity of a cluster. It
+generates a random matrix that fills all the available RAM in a system and performs linear algebra
+operations that use up all the available CPU. 
+
+Here we benchmark the performance of different nodes individually as well as as a larger cluster unit.
+These include 
+
 - 10 40-core stdmem nodes
-- 1 80-core himem nodes
-- 1 80-core himem nodes
-- 2 -core himem nodes
+- 1 80-core bigimem node
+- 2 24-core gpu-containing nodes
 
 
 # HPL Input files
@@ -93,6 +100,12 @@ ALIGN    :    8 double precision words
 
 </pre>
 
+Here we benchmark the performance of different nodes individually as well as as a larger cluster unit.
+These include 
+
+- 10 40-core stdmem nodes
+- 1 80-core bigimem node
+- 2 24-core gpu-containing nodes
 
  T/V                                                |  N  |  NB | P | Q | Time(secs)  |  Gflops |
 ----------------------------------------------------|-----|-----|---|---|---------|-------------
@@ -105,3 +118,14 @@ ALIGN    :    8 double precision words
 | logs/10-nodes.log:WC00C2R2                       | 448512 | 384 | 2 | 5 | 2707 |  22,219 |
 
 
+# Log files
+
+You can find the log files of these benchmarks in the `logs` directory.
+
+# Useful sites
+
+You can get an estimate of the HPL numbers for your cluster at the site below even though you have to carefully provide the right information.
+(http://hpl-calculator.sourceforge.net/)[http://hpl-calculator.sourceforge.net/]
+
+You also have to use an optimal HPL input file which you can generate here:
+(https://www.advancedclustering.com/act_kb/tune-hpl-dat-file)[https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/]
