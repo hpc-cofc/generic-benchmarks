@@ -25,15 +25,15 @@ Gflops : Rate of execution for solving the linear system.
 </pre>
 
 
- T/V                                                |  N  |  NB | P | Q | Time(secs)  |  Gflops |
-----------------------------------------------------|-----|-----|---|---|---------|-------------
-| logs/gpuv100.log:WC00C2R2                        | 141312 | 384 | 1 | 1 | 1182 |  1,591 |
-| logs/1-nodes.log:WC00C2R2                        | 141312 | 384 | 1 | 1 | 823  |  2,285 |
-| logs/2-nodes.log:WC00C2R2                        | 200448 | 384 | 1 | 2 | 1200 |  4,474 |
-| logs/bigmem.log:WC00C2R2                         | 400896 | 384 | 1 | 1 | 10607 |  4,050 |
-| logs/4-nodes.log:WC00C2R2                        | 283392 | 384 | 2 | 2 | 1699 |  8,931 |
-| logs/8-nodes.log:WC00C2R2                        | 400896 | 384 | 2 | 4 | 2415 |  17,785|
-| logs/10-nodes.log:WC00C2R2                       | 448512 | 384 | 2 | 5 | 2707 |  22,219 |
+ T/V                         | N<sub>cores</sub> | MEM/node (GB) |  N  |  NB | P | Q | Time(secs)  |  Gflops |
+|:---------------------------|----------:|-------:|-----:|-----:|---:|---:|---------:|-------------:|
+| 1-gpuv100-node:WC00C2R2    | 24   | 192        | 141312 | 384 | 1 | 1 | 1182 |  1,591 |
+| 1-stdmem-node:WC00C2R2     | 40   | 192        | 141312 | 384 | 1 | 1 | 823  |  2,285 |
+| 2-stdmem-nodes:WC00C2R2    | 80   | 192        | 200448 | 384 | 1 | 2 | 1200 |  4,474 |
+| 1-bigmem-node:WC00C2R2     | 80   | 1536       | 400896 | 384 | 1 | 1 | 10607 |  4,050 |
+| 4-stdmem-nodes:WC00C2R2    | 160  | 192        | 283392 | 384 | 2 | 2 | 1699 |  8,931 |
+| 8-stdmem-nodes:WC00C2R2    | 320  | 192        | 400896 | 384 | 2 | 4 | 2415 |  17,785|
+| 10-stdmem-nodes:WC00C2R2   | 400  | 192        | 448512 | 384 | 2 | 5 | 2707 |  22,219 |
 
 Please see the `compute-HPL` directory for details.
 
